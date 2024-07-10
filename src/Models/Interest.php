@@ -27,6 +27,7 @@ class Interest extends Model
      */
     protected $fillable = [
         'key',
+        'device_name',
         'value',
     ];
 
@@ -36,11 +37,6 @@ class Interest extends Model
      * @var bool
      */
     public $timestamps = false;
-
-    /**
-     * Table doesn't have an incrementing ID.
-     */
-    public $incrementing = false;
 
     /**
      * Interest constructor.
