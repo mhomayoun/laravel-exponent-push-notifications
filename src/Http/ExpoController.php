@@ -36,6 +36,7 @@ class ExpoController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'expo_token'    =>  'required|string',
+            'device_name'   =>  'nullable|string',
         ]);
 
         if ($validator->fails()) {
@@ -48,11 +49,11 @@ class ExpoController extends Controller
         }
 
         $token = $request->get('expo_token');
-
+        $deviceName = $request->get('device_name');
         $interest = $this->expoChannel->interestName(Auth::user());
 
         try {
-            $this->expoChannel->expo->subscribe($interest, $token);
+            $this->expoChannel->expo->subscribe($interest, $token, $deviceName);
         } catch (\Exception $e) {
             return new JsonResponse([
                 'status'    => 'failed',
