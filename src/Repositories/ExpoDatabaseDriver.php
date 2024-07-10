@@ -14,11 +14,12 @@ class ExpoDatabaseDriver implements ExpoRepository
      * @param $value
      * @return bool
      */
-    public function store($key, $value): bool
+    public function store(string $key, string $value, ?string $deviceName): bool
     {
         $interest = Interest::firstOrCreate([
             'key' => $key,
             'value' => $value,
+            'device_name' => $deviceName,
         ]);
 
         return $interest instanceof Interest;
