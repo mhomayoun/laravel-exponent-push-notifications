@@ -1,5 +1,6 @@
 {
-    "name": "alymosul/laravel-exponent-push-notifications",
+    "name": "mhomayoun/laravel-exponent-push-notifications",
+    "version": "1.0.0",
     "description": "Exponent push notifications driver for laravel",
     "homepage": "https://github.com/alymosul/laravel-exponent-push-notifications",
     "license": "MIT",
@@ -13,7 +14,7 @@
     "require": {
         "php": "^8.2",
         "alymosul/exponent-server-sdk-php": "1.4.*",
-        "laravel/framework": "^11.0"
+        "laravel/framework": ">10.0"
     },
     "require-dev": {
         "mockery/mockery": "^1.5.0",
